@@ -1,38 +1,45 @@
-# qrdemo
+# PlainQR
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+PlainQR is a standalone QR code website built for general users. The product is anonymous-first and utility-first: choose a QR type, fill a short form, preview the result live, and download a clean PNG or SVG without a login wall.
 
-## Getting Started
+## Product shape
 
-First, run the development server:
+- Mobile-first layout with a fully supported desktop split view
+- Minimalist UI with large type, high contrast, and low cognitive load
+- Live QR preview with payload copy support
+- PNG and SVG downloads
+- Ten QR types in v1:
+  - Website link
+  - Wi-Fi access
+  - Contact card
+  - WhatsApp chat
+  - Email draft
+  - Phone call
+  - Plain text
+  - SMS message
+  - Map location
+  - PDF / file link
+
+## Development
+
+Run the local dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- `qrcode` for QR generation
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The old travel demo routes were removed during the rebrand.
+- The core QR generation behavior now comes from a shared QR-type definition model in `lib/qr-types.ts`.
+- The v1 product is intentionally stateless: no accounts, analytics, or saved history yet.
